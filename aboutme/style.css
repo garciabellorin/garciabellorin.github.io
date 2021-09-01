@@ -1,0 +1,63 @@
+*{
+	margin:0;
+	padding:0;
+}
+body { 
+    font-family: 'Trebuchet MS', 'Georgia', 'Gill Sans';
+    background-image: url("../images/background.jpg");
+    background-size: 50%;
+    color: #011F26;
+}
+
+.header {
+    background-color: black;
+    color: white;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.header h1 {
+    font-family: 'Arial Black';
+    padding-bottom: 0.25em;
+}
+
+.header p {
+    font-family: Verdana;
+    color: rgb(209, 200, 200);
+    font-weight: 100;
+}
+
+.section {
+    font-family:  consolas;
+    padding-left: 50px;
+}
+
+.section h2 {
+    font-family: fantasy;
+    letter-spacing: 0.18em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+.section ul, ol {
+    padding-left: 50px;
+}
+
+.column {
+    float: left;
+    width: 15%;
+    padding: 5px;
+}
+  
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.footer {
+    padding-top: 100px;
+}
+
+
+
