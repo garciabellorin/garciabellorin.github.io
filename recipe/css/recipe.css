@@ -1,0 +1,159 @@
+body {
+    background-image: url('../images/silverware.jpg');
+    background-color: white;
+    color: #404040;
+    font-family: Georgia, Garamond, serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #A4A400;
+    background-color: #F0F0F0;
+    font-family: "Lucida Sans Unicode", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    font-size: 18pt;
+    text-align: left;
+    text-decoration: underline;
+}
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 22pt;
+}
+
+a {
+    color: #A4A400;
+}
+
+ul.indications {
+    padding: 0;
+    list-style-type:disc;
+}
+
+.dir-summary {
+    font-weight: bold;
+}
+
+.ingredients, .subdir {
+    list-style: url(../images/pie_bullet.png);
+}
+
+ul.comments {
+    list-style-type: none;
+    font-style: italic;
+}
+
+ul.comments li.comment {
+    background-color: #FFFFA8;
+}
+
+ul.comments li.comment p.comment-name::before {
+    content: '- ';
+}
+
+ul.links {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    font-size: 11pt;
+}
+
+footer ul.copyright {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    font-size: 11pt;
+    max-width: 20em;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: right;
+}
+
+.strike-out {
+    text-decoration: line-through;
+}
+
+.tbsp-tooltip {
+    border-bottom: 1px dotted #404040;
+    position: relative;
+    display: inline-block;
+}
+
+/*** Tooltip ***/
+.tsp-tooltip {
+    border-bottom: 1px dotted #404040;
+    position: relative;
+    display: inline-block;
+}
+
+
+.tbsp-tooltip .tbsp-tooltip-text {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+  
+
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+  
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+  
+.tbsp-tooltip .tbsp-tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+  
+.tbsp-tooltip:hover .tbsp-tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.tsp-tooltip .tsp-tooltip-text {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+  
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+  
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+  
+.tsp-tooltip .tsp-tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+  
+.tsp-tooltip:hover .tsp-tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
