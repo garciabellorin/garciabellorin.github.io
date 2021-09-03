@@ -5,25 +5,51 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="getgrades.css">
     <title>Retrieve Grade</title>
 </head>
 
 <body>
     <h1>Retrieve your grade</h1>
 
-    <p>Name:
-        <input type="text" name="name" value="">
-    </p>
-    <p>Student ID:
-        <input type="text" name="student-id" value="">
-    </p>
-    <p>
-        <input type="submit" name="get-grade" value="Get Grade">
-    </p>
+    <form action="http://mumstudents.org/params.php">
+        <p>
+            <label for="fullname">Name:</label>
+            <input type="text" name="fullname" id="full-name" required>
+        </p>
 
-    <form action="">
-        <input type="text" name="q" value="" />
-        <input type="submit" value="Booyah!" />
+        <p>
+            <label for="sid">Student ID:</label>
+            <input type="text" name="sid" id="student-id" required>
+        </p>
+
+        <p>
+            <label for="assignment">Choose your Assignment</label><br>
+            <select name="assignment" id="">
+                <option>CS401-Modern Programming Practices</option>
+                <option>CS422-Database Management Systems</option>
+                <option value="">CS472-Web Programming</option>
+                <option value="">CS435-Algorithms</option>
+                <option value="">CS572-Modern Web Applications</option>
+            </select>
+        </p>
+
+        <p>
+            <span><input type="radio" name="entrydate" value="Feb-2020">Feb-2020</span>
+            <span><input type="radio" name="entrydate" value="May-2020">May-2020</span>
+            <span><input type="radio" name="entrydate" value="Aug-2020">Aug-2020</span><br>
+            <span><input type="radio" name="entrydate" value="Feb-2021" checked>Feb-2021</span>
+            <span><input type="radio" name="entrydate" value="May-2021">May-2021</span>
+            <span><input type="radio" name="entrydate" value="Aug-2021">Aug-2021</span>
+        </p>
+        <p>
+            <input type="checkbox" name="valid" required> Are you the holder of this StudentID&quest;
+        </p>
+        <p>
+            <label for="okbutton">Get Grades</label>
+            <input type="submit" value="ok" id="button">
+        </p>
+
     </form>
 </body>
 
