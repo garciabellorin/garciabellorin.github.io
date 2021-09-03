@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10pt;
+}
+
+.overall {
+    display: grid;
+    grid-template-columns: 120px 300px;
+    grid-gap: 5px;
+    max-width: 380px;
+    background-color: #DFDFFE;
+    border-radius: 10px;
+}
+.text {
+    padding: auto;
+    font-weight: bold;
+}
+.legends{
+    border-style: outset;
+    border-width: 3px;
+    background-color: white;
+    border-color: #E2E2E2;
+ 
+}
+
+.footer {
+    max-width: 380px;
+}
+
+.textfield{
+    width: 25%;
+}
+
+
+
+.warning{
+    color: red;
+    left: 10px;
+}
+.signup{
+    background-color: #FFAAAA;
+}
