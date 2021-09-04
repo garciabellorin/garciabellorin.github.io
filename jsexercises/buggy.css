@@ -1,0 +1,43 @@
+body :not(pre, .wrong, a ){
+    font-family: Verdana;
+    font-size: 10pt;
+}
+
+.wrong {
+    color:red;
+}
+
+.right {
+    color:mediumblue;
+}
+
+span {
+    font-weight:bold ;
+    quotes: "\"";
+}
+pre {
+    border: 3px inset gray;
+    border-radius: 4px;
+    background-color:black;
+    color: white;
+    margin: 0px;
+    padding: 10px;
+    width: fit-content;
+}
+em {
+    font-weight: bold;
+    font-style: italic;
+}
+li {
+    padding-bottom: 5px;
+}
+a {
+    text-decoration: none;
+    color: navy;
+    font-family: Tahoma, Verdana;
+    font-size: 11pt;
+}
+.back {
+    padding-top: 50px;
+    margin: auto;
+}
