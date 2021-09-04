@@ -5,6 +5,6 @@ function calcTip() {
 	// var subtotal = subtotalElem.value;
 	// var tip = tipElem.value;
 	// var total = (1 + tip / 100) * subtotal * 1.00;
-    var total = (1 + tipElem / 100) * subtotalElem * 1.00;
+    var total = (tipElem / 100) * subtotalElem;
 	totalElem.innerHTML = '$' + total;
 }
