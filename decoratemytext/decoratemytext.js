@@ -21,7 +21,7 @@ function bling() {
         blingStyle.style.textDecoration = "underline";
         imagebg.src = "/decoratemytext/images/hundred-dollar-bill.jpg";
         imagebg.style.width = "320px";
-        
+
     }
     else {
         blingStyle.style.fontWeight = "normal";
@@ -33,7 +33,41 @@ function biggerDecorations() {
     setInterval(biggerDecorations2, 5000);
 }
 
-function IgpayAtinlay(){
-   
-    
+function IgpayAtinlay() {
+    var caseText = document.getElementById("Text").value;
+    var splitWords = caseText.split(" ");
+    var piggyText = '';
+    var vowelRegExp = '^[aieouAIEOU].*';
+
+    for (var i = 0; i < splitWords.length; i++) {
+
+        if (splitWords[i].length === 1) {
+            piggyText = piggyText.concat(splitWords[i].concat("ay")).concat(" ");
+        }
+        else {
+            if (splitWords[i].match(vowelRegExp)) {
+                piggyText = piggyText.concat(splitWords[i].concat("ay")).concat(" ");
+            }
+
+            else {
+                piggyText = piggyText.concat(splitWords[i].substring(1))
+                    .concat(splitWords[i].charAt(0)
+                        .concat("ay")).concat(" ");
+            }
+        }
+    }
+    document.getElementById("Text").value = piggyText;
+    //remove last space
+}
+
+function Malkovitch() {
+    var caseText = document.getElementById("Text").value;
+    var splitWords = caseText.split(" ");
+
+    for (var i = 0; i < splitWords.length; i++) {
+        if (splitWords[i].length >= 5) {
+            splitWords[i] = 'Malkovitch';
+        }
+    }
+    document.getElementById("Text").value = splitWords.join(" ");
 }
