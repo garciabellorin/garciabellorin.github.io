@@ -1,0 +1,20 @@
+body {
+    border: 1px solid black;
+    width: fit-content;
+    box-sizing: content-box;
+    padding: 5px;
+}
+
+div {
+    padding: 5px
+}
+
+.textfields {
+    box-sizing: content-box;
+    width: fit-content;
+    column-count: 1;
+    column-gap: 10px;
+
+
+}
+

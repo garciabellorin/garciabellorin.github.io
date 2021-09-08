@@ -1,0 +1,17 @@
+.comments {
+    color:crimson;
+    font-weight: 800;
+}
+
+p {
+    font-family: monospace;
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+.answer {
+    font-family: monospace;
+    font-size: 16pt;
+    font-weight: bold;
+    color: blue;
+}
