@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/module-and-closure-lab/style/style.css">
+    <title>Module and Closure Lab</title>
+</head>
+
+<body>
+    <h1>Module and Closure Lab</h1>
+    <div class="exercise">
+        <p>1. Rewrite the setInterval example (the one with function delayMsg2 that prints out ‘Rudy!’) to use the
+            module
+            pattern. Call the module ‘rudyTimer’. I.e., varrudyTimer’= (… )() and then use the module as the event
+            handler
+            on the button. I.e., &lt;button onclick=" rudyTimer’ ()"&gt;Click me!&lt;/button&gt;</p>
+        <span class="answer">
+            <a href="/module-and-closure-lab/exercise1/exercise1.html">Answer</a>
+        </span>
+    </div>
+
+    <div class="exercise">
+        <p><h4>2. Write a small Javascript application that uses a module for creating different kinds of banking accounts.</h4>
+        <h4>
+            - Do the exercise with the basic object factory module pattern. Be sure to validate your code through
+            jsHint.
+        </h4>
+        <h4>- You should have a button event handler that uses the module to create an account.</h4>
+        <h4>
+            - The module should have a public method for creating the account. That method will retrieve the account
+            name and deposit entries from the web page and then set those values into private variables in the
+            account module for the account name and balance.
+        </h4>
+        <h4>
+            - You should have an accountInfoList variable outside the module. The event handler will store information
+            about each new account in this list and display the updated list each time a new account is created.
+            IMPORTANT REQUIREMENT: The accountInfoList must hold account objects, not Strings.
+        </h4>
+        <h4>- You should fill the text area by retrieving information from the accounts in the list.</h4>
+        <h4>- Create a simple html page with inputs and button similar to the example below.</h4>
+        </p>
+        <span class="answer">
+            <a href="/module-and-closure-lab/exercise2/exercise2.html">Answer</a>
+        </span>
+    </div>
+</body>
+
+</html>
