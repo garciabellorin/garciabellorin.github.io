@@ -69,6 +69,42 @@
     <p>Yes.</p>
     <h2>(e) Do statements in Scope C have access to variables defined in Scope B?</h2>
     <p>Yes.</p>
+    
+    <h2>
+        4. What will be printed by the following (answer without running it)?
+    </h2>
+    <pre>var x = 9;
+function myFunction() {
+    return x * x;
+    }
+    document.write(myFunction()); <span class="comments">//previously displayed: (blank) -> currently displayed: 81</span>
+    x = 5;
+    document.write(myFunction()); <span class="comments">//previously displayed: 81 -> currently displayed: 8125</span></pre>
+    <span class="answer">Answer: 8125</span>
+
+<h2>5. What will the alert print out? (Answer without running the code. Remember ‘hoisting’.)?</h2>
+
+<pre>var foo = 1;
+function bar() {
+    if (!foo) { <span class="comments">//Predicate is true because of the declaration of foo outside of the function body</span>
+        var foo = 10; <span class="comments">//current value of foo</span>
+    }
+    alert(foo); <span class="comments">//output is alert(10)</span>
+}
+bar();
+</pre>
+<span class="answer">Answer: is an alert(10)</span>
+
+<h2>6. Consider the following definition of an add( ) function to increment a counter variable:</h2>
+
+<pre>var add = (function () {
+    var counter = 0;
+    return function () {
+        return counter += 1;
+    }
+})();</pre>
+<h2>Modify the above module to define a count object with two methods: add( ) and reset( ). The count.add( ) method
+    adds one to the counter (as above). The count.reset( ) method sets the counter to 0</h2>
 </body>
 
 </html>
