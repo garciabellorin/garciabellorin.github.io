@@ -1,1 +1,1 @@
-https://garciabellorin.github.io/scope-exercises/scope-exercises.html
+https://garciabellorin.github.io/JavaScript%20Module%20Exercises/module-exercises.html
