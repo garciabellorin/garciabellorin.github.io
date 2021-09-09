@@ -1,7 +1,10 @@
+* {
+    text-align: justify;
+}
 body {
-    width: 640px;
+    width: 50%;
     box-sizing: border-box;
-    font-family: monospace;
+    font-family: monospace, times;
 }
 
 .comments {
@@ -9,9 +12,14 @@ body {
     font-weight: 800;
 }
 
+pre, p {
+    font-size: 11pt;
+    padding-left: 8px;
+}
+
 h2 {
     
-    font-size: 12pt;
+    font-size: 13pt;
     font-weight: bold;
 }
 

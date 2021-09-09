@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/JavaScript Module Exercises/style/style.css">
+
+    <title>Javascript Module Exercises</title>
+</head>
+
+<body>
+    <h1>Javascript Module Exercises</h1>
+    <h2>
+        1. Determine what this Javascript code will print out (without running it):</h2>
+    </h2>
+    <pre>
+1: x = 1;
+2: var a = 5;
+3: var b = 11;
+4: var c = function (a, b, c) { //c(8, 9, 10)
+5:     var x = 10;
+6:     document.write(x); <span class="comments">//previously displayed: (blank) -> currently displayed: 10</span class="comments">
+7:     document.write(a); <span class="comments">//previously displayed: 10 -> currently displayed: 108</span class="comments">
+8:     var f = function (a, b, c) { <span class="comments">//f(8, 9, 10) line 14</span class="comments">
+9:         b = a; //b = 8
+10:         document.write(b); <span class="comments">//previously displayed: 108 -> currently displayed: 1088</span class="comments">
+11:         b = c; 
+12:         var x = 5; 
+13:     }
+14:     f(a, b, c); 
+15:     document.write(b); <span class="comments">//previously displayed: 1088 -> currently displayed: 10889</span class="comments">
+16: }
+17: c(8, 9, 10);
+18: document.write(b); <span class="comments">//previously displayed: 10889 -> currently displayed: 1088910</span class="comments">
+19: document.write(x);  <span class="comments">//previously displayed: 1088910 -> currently displayed: 10889101</span class="comments">
+<span class="answer">Answer: 10889101</span>
+    </pre>
+
+    <h2>2. Define Global Scope and Local Scope in Javascript.</h2>
+    <p>Global Scope are those elements declared outside a function or code block, and they
+        are not limited to any code block. They belong to the outermost closure, and can be accessible
+        anywhere globally outside any function of method in our script.
+    </p>
+    <p>
+        Local scope refers to those elements declared within a function or code block. It also depends
+        if those variables are declared as <em><strong>let</strong></em> or <em><strong>const</strong></em>,
+        their scope is locally limited to the code block or function in which they were defined. Those elements
+        are not accessible outside of the code block or function in which they were defined.
+    </p>
+    <h2>3. Consider the following structure of Javascript code:</h2>
+    <pre>
+    // Scope A
+    function XFunc () {
+        // Scope B
+        function YFunc () {
+            // Scope C
+        };
+    };
+</pre>
+    <h2>(a) Do statements in Scope A have access to variables defined in Scope B and C?</h2>
+    <p>No.</p>
+    <h2>(b) Do statements in Scope B have access to variables defined in Scope A?</h2>
+    <p>Yes.</p>
+    <h2>(c) Do statements in Scope B have access to variables defined in Scope C?</h2>
+    <p>No.</p>
+    <h2>(d) Do statements in Scope C have access to variables defined in Scope A?</h2>
+    <p>Yes.</p>
+    <h2>(e) Do statements in Scope C have access to variables defined in Scope B?</h2>
+    <p>Yes.</p>
+</body>
+
+</html>

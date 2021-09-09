@@ -1,0 +1,43 @@
+
+html { 
+    background: url("/images/background-2400x1350.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: monospace, sans-serif;
+  }
+
+  ul {
+    border-radius: 8px;
+    background-color: black;
+    opacity: 50%;
+    width: fit-content;
+    padding: 10px;
+}
+
+
+
+ul, a, h2 {
+    text-decoration: none;
+    color: white;
+    
+}
+
+li {
+    list-style-position: inside;
+}
+
+li:hover {
+    text-decoration: underline;
+}
+
+#profilePic {
+border-radius: 50%;
+height: 10%;
+width: 10%;
+overflow: hidden;
+display: flex;
+justify-content: center;
+align-items: center;
+}
