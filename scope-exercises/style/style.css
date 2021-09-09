@@ -1,17 +1,22 @@
+body {
+    width: 640px;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
 .comments {
     color:crimson;
     font-weight: 800;
 }
 
-p {
-    font-family: monospace;
+h2 {
+    
     font-size: 12pt;
     font-weight: bold;
 }
 
 .answer {
-    font-family: monospace;
-    font-size: 16pt;
+    font-size: 14pt;
     font-weight: bold;
     color: blue;
 }

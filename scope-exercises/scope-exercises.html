@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="/scope-exercises/script/script.js"></script>
+    <link rel="stylesheet" href="/scope-exercises/style/style.css">
+
+    <title>Javascript Scope Exercises</title>
+</head>
+
+<body>
+    <button onclick="delayMsg2();">Click me!</button>
+    <span id="output"></span>
+
+    <h1>Scope & Closurse</h1>
+    <h2>
+        1. Determine what this Javascript code will print out (without running it):</h2>
+    </h2>
+    <pre>
+1: x = 1;
+2: var a = 5;
+3: var b = 11;
+4: var c = function (a, b, c) { //c(8, 9, 10)
+5:     var x = 10;
+6:     document.write(x); <span class="comments">//previously displayed: (blank) -> currently displayed: 10</span class="comments">
+7:     document.write(a); <span class="comments">//previously displayed: 10 -> currently displayed: 108</span class="comments">
+8:     var f = function (a, b, c) { <span class="comments">//f(8, 9, 10) line 14</span class="comments">
+9:         b = a; //b = 8
+10:         document.write(b); <span class="comments">//previously displayed: 108 -> currently displayed: 1088</span class="comments">
+11:         b = c; 
+12:         var x = 5; 
+13:     }
+14:     f(a, b, c); 
+15:     document.write(b); <span class="comments">//previously displayed: 1088 -> currently displayed: 10889</span class="comments">
+16: }
+17: c(8, 9, 10);
+18: document.write(b); <span class="comments">//previously displayed: 10889 -> currently displayed: 1088910</span class="comments">
+19: document.write(x);  <span class="comments">//previously displayed: 1088910 -> currently displayed: 10889101</span class="comments">
+<span class="answer">Answer: 10889101</span>
+    </pre>
+
+    <h2>2. What is the difference between a method and function?</h2>
+    <p>The main difference is that functions are a set of methods that perform a task whereas a method
+        is a function assigned to an object property. Functions can be used directly while methods can
+        be called only by the object that contains them.</p>
+<p>For example, if we have a function to calculate area</p>
+<pre>var rectangle = function area (sideA, sideB) {
+    var sum = sideA * sideB;
+    return sum;
+};
+</pre>
+<p>We can use area function as a standalone object because it is not associated with any other object, 
+    just the required parameters. For example, <em>rectangle(2, 4); // 8</em></p>
+    <p>However, if we have a simple object like a string (<em>var str = 'TWO WORDS'</em>)  and we want to use
+    the method <em>toLowerCase()</em>, we have to associate it with the given string, otherwise it does not 
+    have any sense <em>var lowCase = str.toLowerCase(); // 'two words'</em> since <em>toLowerCase()</em>is
+a method of <em>String</em> object.</p>
+
+    <h2>3. What does 'this' refer to when used in a Java method?</h2>
+    <p>In Java, <em><strong>this</strong></em> refers to the instance variables of a class, disregarding the 
+        method from what this variable is called.</p>
+    <h2>4. What does 'this' refer to when used in a JavaScript method?</h2>
+    <p>In JavaScript, <em><strong>this</strong></em> refers to the variables of the object owner when a method is called. 
+        However, the method itself can have its own variables and, at the same time, every inner object 
+        can have its own variables to which they also refer with a <em><strong>this</strong></em> keyword.</p>
+    <h2>5. What does 'this' refer to when used in a JavaScript constructor function?</h2>
+    <p>Refers to the parameters of a function constructor. Initially, <em><strong>this</strong></em> does not have a value
+         but it is used to pass the parameters references to the object variables, similar to Java. Later, the object 
+         itself uses them.</p>
+    <h2>
+        6. Assume object x is the prototype for object y in Javascript. Object x has
+        a method f( ) containing keyword 'this'. When f is called by x.f( ),
+        what does 'this' refer to?
+    </h2>
+    <p>Refers to x</p>
+    <h2>7. What is a free variable in JavaScript?</h2>
+    <p>Free variables are variables that are neither locally declared nor passed as parameter. They are outside of
+        the closure. However, a free variable for one method might not be a free variable for an outer method.</p>
+    <h2>
+        8. Create an object that has properties with name = "fred" and major="music" and a property that is a function
+        that takes 2 numbers and returns the smallest of the two, or the square of the two if they are equal.
+    </h2>
+    <pre>var equalsOrNot = {
+    "name": "fred",
+    "major": "music",
+    "smallOrSquare": function(a, b) {
+        if (a === b) {
+            return ((a * a) + (b * b));
+        }
+        else {
+            return (a > b ? b : a);
+        }
+    }
+}</pre>
+    <h2>
+        9. Write Javascript code for creating three Employee objects using the "new" keyword and a constructor function.
+        Employee objects have the following fields: name, salary, position.
+    </h2>
+    <pre>function employee(name, salary, position) {
+    this.name = name;
+    this.salary = salary;
+    this.position = position;
+    }
+    var johnMalkovich = new employee("John Malkovich", 96000, "Program Manager");
+    var sandraBullock = new employee("Ken Jones", 106000, "Testing Engineer");
+    var susanSarandon = new employee("Afework Fita", 101000, "Software Developer");</pre>
+    <h2>
+        10. Write a Javascript function that takes any number of input arguments and returns the product of the
+        arguments.
+    </h2>
+    <pre>function aFunction (...numbers) {
+    var product;
+    for (let i = 0; i &lt; numbers.length; i++) {
+        product *= numbers[i];
+    }
+    return product;
+}</pre>
+    <h2>11. Write an arrow function that returns the maximum of its three input arguments.</h2>
+    <pre>var returnMax = (a, b, c) => {
+    var max;
+    max = (a &gt; b) ? a : b;
+    max = (max &gt; c) ? max : c;
+    return max;
+};</pre>
+</body>
+
+</html>
