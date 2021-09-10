@@ -16,16 +16,14 @@ html {
     padding: 10px;
 }
 
-
-
 ul, a, h2 {
     text-decoration: none;
-    color: white;
-    
+    color: white;    
 }
 
 li {
     list-style-position: inside;
+    
 }
 
 li:hover {

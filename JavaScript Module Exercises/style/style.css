@@ -1,10 +1,12 @@
 * {
     text-align: justify;
+    font-size: 11pt;
 }
 body {
     width: 50%;
     box-sizing: border-box;
     font-family: monospace, times;
+
 }
 
 .comments {
@@ -13,18 +15,19 @@ body {
 }
 
 pre, p {
-    font-size: 11pt;
     padding-left: 8px;
 }
 
-h2 {
-    
-    font-size: 13pt;
+h2, h3 {
     font-weight: bold;
 }
 
 .answer {
-    font-size: 14pt;
     font-weight: bold;
     color: blue;
+}
+
+h3 {
+    margin-bottom: 0;
+    line-height: 3px;
 }
