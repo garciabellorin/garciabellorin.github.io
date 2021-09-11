@@ -3,7 +3,7 @@
     font-size: 11pt;
 }
 body {
-    width: 50%;
+    width: min-content;
     box-sizing: border-box;
     font-family: monospace, times;
 
