@@ -5,8 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maze!</title>
+		
+    <link rel="icon" type="image/png" href="../favicon.png"/>
+    <link rel="stylesheet" href="css/provided.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"
+    ></script>
+    <script src="js/maze.js"></script>
 </head>
 <body>
+    <h1>The Amazing Mouse Maze!</h1>
+    <h2 id="status">Click the "S" to begin.</h2>
     
+    <!-- This part of the page represents the maze -->
+    <div id="maze">
+        <div id="start">S</div>
+        <div class="boundary" id="boundary1"></div>
+        <div class="boundary"></div>
+        <div class="boundary"></div>
+        <div class="boundary"></div>
+        <div class="boundary"></div>
+        <div id="end">E</div>
+    </div>
+    
+    <p>
+        The object of this game is to guide the mouse cursor through the start area and get to the end area.  Be sure to avoid the walls:
+    </p>
+    
+    <div class="boundary example" title="Clicking this leads back to homepage"></div>
+    
+    <p>
+        Good luck!
+    </p>
 </body>
 </html>
