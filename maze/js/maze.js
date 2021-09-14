@@ -7,7 +7,10 @@ $(() => {
         $('.boundary').addClass('youlose');
     };
 
-    $('.boundary').mouseover(lose);
+    $(".boundary").mouseover( () => {
+        $('h2#status').text("Sorry, you lost :[");
+        $('.boundary').mouseover(lose);
+    });
 
     $('#start').click(() => {
         lost = false;
