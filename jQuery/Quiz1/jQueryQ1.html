@@ -6,7 +6,7 @@
     <script src="js/script.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>jQuery Quiz I</title>
-    
+
 </head>
 
 <body>
@@ -15,6 +15,18 @@
         <li>
             In jQuery terminology, what is the difference between the "jQuery function"
             and the "jQuery object"?
+            <p class="answer">Functions are standalone entities that require an input, not necessarily declared, to
+                apply a method or a set of methods on it, and it is also not necessary to be related to the DOM. For
+                example: $.trim(element);</p>
+    
+                <p class="answer">
+                    Objects are required to be grabbed by a selector and the returned value must be chained to another
+                    method. For example, $("p").hide();
+                </p>
+                <p class="answer">
+                    The main difference is that functions apply methods to an input whereas objects are required to be
+                    grabbed and chained to methods to obtain a value.
+                </p>
         </li>
         <li>Write jQuery code to find all h1 elements that are children of a div element
             and make their background color red.
