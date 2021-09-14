@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- <script src="js/script.js"></script> -->
+    <link rel="stylesheet" href="../Quiz1/css/style.css">
+    <title>jQuery Quiz II</title>
+
+</head>
+
+<body>
+    <h1 id="title">jQuery Quiz II</h1>
+    <ol>
+        <li>
+            Which, if any, of the following 3 code fragments are equivalent? Explain why they are different, if
+            they are. Explain why they can have different parameters and be equivalent, if they are equivalent.
+        </li>
+        <pre>
+//code fragment 1
+$("li").each(function(idx, e) {
+    $(e).css(“color”, “yellow”); });
+
+//code fragment 2
+$("li").each(function() {
+    $(this).css(“color”, “yellow”); });
+
+//code fragment 3
+$("li").each(function(idx) {
+    $(this).css(“color”, “yellow”); });
+            </pre>
+            <p class="answer">Answer:</p>
+        <p class="answer">All three are equivalent. Working with the <em>.each()</em> function give us some
+            flexibility.
+            This function can work seamless with objects and arrays and uses (<em>index, element</em>) as parameters
+            but in our case
+            we are not interested on (not using) the index value since we iterate trhough all the elements.
+        </p>
+        <p class="answer">This is why on <em>code fragment 1</em> we use the element paramenter to grab the object
+            and on the other two
+            code fragments, disregarding of the parameters we use <em>this</em> to grab the object itself,
+            <em>this</em> represents the owner
+            of the method, in this case, all listed (li) items, and still get the same result.
+        </p>
+
+        <li>
+            Write a jQuery expression to find all divs on a page that include an unordered list in them, and make
+            their text color be blue.
+        </li>
+        <pre>
+    &lt;div&gt;no ul here &lt;/div&gt;
+        &lt;div&gt;
+            This does contain a ul.
+            &lt;ul&gt;
+                &lt;li&gt;the first item&lt;/li&gt;
+                &lt;li&gt;the second item&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;script&gt;
+    &lt;!—INSERT YOUR JQUERY CODE HERE - - &gt;
+    &lt;/script&gt;
+&lt;/body&gt;
+        </pre>
+
+        <p class="answer">Answer:</p>
+        <pre class="answer">
+$(document).ready(function () {
+    $("div ul").css("color", "blue");
+});
+        </pre>
+
+    </ol>
+
+</body>
+
+</html>

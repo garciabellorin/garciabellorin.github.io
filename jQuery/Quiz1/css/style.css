@@ -31,3 +31,8 @@ h3 {
     margin-bottom: 0;
     line-height: 3px;
 }
+
+#title {
+    font-size: 14pt;
+    text-align: center;
+}
