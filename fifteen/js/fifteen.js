@@ -1,3 +1,4 @@
+"use strict"
 $(document).ready(function () {
 
 	window.onload = function () {
@@ -9,7 +10,7 @@ $(document).ready(function () {
 	var tileNumber = [];
 	function placeElements() {
 		var puzzlepieces = $$("#puzzlearea div");
-		for (var i = 0; i < puzzlepieces.length; i++) {
+		for (let i = 0; i < puzzlepieces.length; i++) {
 			puzzlepieces[i].className = "puzzlepiece";
 			puzzlepieces[i].id = i;
 			tileNumber[i] = i + 1;
@@ -27,23 +28,23 @@ $(document).ready(function () {
 	//Place a single piece into right position
 	var size = 4;
 	function tilePosition(piece, index) {
-		//index -> (x, y)
-		var x = Math.floor(index / size);
-		var y = index % size;
+		//Position (x, y)
+		var posX = Math.floor(index / size);
+		var posY = index % size;
 
-		var fromTheTopEdge = x * (400 / size);
-		var fromTheLeftEdge = y * (400 / size);
-		piece.style.top = fromTheTopEdge + "px";
-		piece.style.left = fromTheLeftEdge + "px";
+		var xZeroRef = posX * (400 / size);
+		var yZeroRef = posY * (400 / size);
+		piece.style.top = xZeroRef + "px";
+		piece.style.left = yZeroRef + "px";
 	}
 
 	//Set background images of the pieces
 	function tileBackground(piece, index) {
 		var posX = Math.floor(index / size);
 		var posY = index % size;
-		var fromTheRightEdge = 400 - posX * (400 / size);
-		var fromTheBottomEdge = 400 - posY * (400 / size);
-		piece.style.backgroundPosition = fromTheBottomEdge + "px " + fromTheRightEdge + "px";
+		var xZeroRef = 400 - posX * (400 / size);
+		var yZeroRef = 400 - posY * (400 / size);
+		piece.style.backgroundPosition = yZeroRef + "px " + xZeroRef + "px";
 	}
 
 	//Move Pieces
