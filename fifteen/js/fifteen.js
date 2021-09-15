@@ -4,11 +4,32 @@ window.onload = function()
 	placeElements();
 };
 
-//Place the elmemts into right position
+// Shuffle the pieces
+function shuffle(event)
+{
+	var puzzlepieces = $$("#puzzlearea div");
+	for (var step = 0; step < 200; step++) {
+		list = [];
+		for (var i = 0; i < puzzlepieces.length; i++) {
+			var tempIndex = parseInt(puzzlepieces[i].id);
+			if (canMoveTo(tempIndex) != -1)
+				list.push(puzzlepieces[i]);
+		}
+		var piece = list[Math.floor(Math.random() * list.length)];
+		var index = parseInt(piece.id);
+		var dest = canMoveTo(index);
+		movePieceFromTo(piece, index, dest);
+		numberOn_Piece[dest] = numberOn_Piece[index];
+		numberOn_Piece[index] = 0;
+		piece.id = dest;
+		list = [];
+	}
+}
+
+//Place the elmemts
 var numberOn_Piece = [];
 function placeElements()
 {
-	// var puzzlearea = $("puzzlearea");
 	var puzzlepieces = $$("#puzzlearea div");
 	for (var i = 0; i < puzzlepieces.length; i++) {
 		puzzlepieces[i].className = "puzzlepiece";
@@ -17,7 +38,7 @@ function placeElements()
 		setPositionOfSinglePiece(puzzlepieces[i], i);
 		setBackgroundForSinglePiece(puzzlepieces[i], i);
 		//Event Handling
-		puzzlepieces[i].addEventListener('click', movePieceEvent);
+		puzzlepieces[i].addEventListener('click', movePiece);
 		puzzlepieces[i].onmouseover = highlightPiece;
 		puzzlepieces[i].onmouseout = dehighlightPiece;
 	}
@@ -49,7 +70,7 @@ function setBackgroundForSinglePiece(piece, index)
 }
 
 //Move Pieces
-function movePieceEvent(event)
+function movePiece(event)
 {
 	var index = parseInt(this.id);
 	var dest = canMoveTo(index);
@@ -61,8 +82,7 @@ function movePieceEvent(event)
 		this.id = dest;
 	}
 
-	//Judge whether it is a successful status
-	//If success, change the background image of the body
+	//Check status
 	var puzzlepieces = $$("#puzzlearea div");
 	var correctCount = 0;
 	for (var i = 0; i < puzzlepieces.length; i++) {
@@ -72,7 +92,7 @@ function movePieceEvent(event)
 	if (numberOn_Piece[puzzlepieces.length] == 0)
 		correctCount++;
 	if (correctCount == 16) {
-		// alert("OH YEAH YOU ARE SUCCESSFUL!");
+		// Win
 		$$('body')[0].setStyle({backgroundColor:'#900'});
 	}
 	else {
@@ -155,27 +175,3 @@ function dehighlightPiece(event)
     this.style.textDecoration = "";
 }
 
-// Shuffle the pieces
-function shuffle(event)
-{
-	var puzzlepieces = $$("#puzzlearea div");
-	//use 20 steps to mess up the puzzle
-	for (var step = 0; step < 200; step++) {
-		list = [];
-		//select the movable pieces
-		for (var i = 0; i < puzzlepieces.length; i++) {
-			var tempIndex = parseInt(puzzlepieces[i].id);
-			if (canMoveTo(tempIndex) != -1)
-				list.push(puzzlepieces[i]);
-		}
-		var piece = list[Math.floor(Math.random() * list.length)];
-		var index = parseInt(piece.id);
-		var dest = canMoveTo(index);
-		movePieceFromTo(piece, index, dest);
-		numberOn_Piece[dest] = numberOn_Piece[index];
-		numberOn_Piece[index] = 0;
-		piece.id = dest;
-		list = [];
-	}
-	
-}
