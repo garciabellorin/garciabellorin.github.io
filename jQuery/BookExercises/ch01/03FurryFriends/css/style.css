@@ -1,0 +1,21 @@
+#clickMe {
+    background: #D8B36E;
+    padding: 20px;
+    text-align: center;
+    width: 250px;
+    display: block;
+    border: 2px solid black;
+}
+
+#picframe {
+    background: #D8B36E;
+    padding: 20px;
+    text-align: center;
+    width: 250px;
+    display: none;
+    border: 2px solid black;   
+}
+
+img {
+    width: 250px;
+}
