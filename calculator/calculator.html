@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            font-family: Verdana, Tahoma, sans-serif;
+        }
+
+        #form {
+            display: flexbox;
+            width: max-content;
+        }
+
+        .container {
+            background-color: #BABFD1;
+            border-radius: 5px;
+            padding: 10px;
+            width: min-content;
+            box-sizing: border-box;
+        }
+
+        input::placeholder {
+            text-align: center;
+            font-style: italic;
+        }
+
+        h1 {
+            font-size: larger;
+            text-align: center;
+        }
+
+        label {
+            font-size: small;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Calculator</h1>
+        <form id="form" method="POST" action="/">
+            <div>
+                <input type="text" id="input1" name="input1" placeholder="Write a number">
+                <select id="eu" name="operation">
+                    <option>operation</option>
+                    <option value="plus">+</option>
+                    <option value="minus">-</option>
+                    <option value="times"> *</option>
+                    <option value="divided">/</option>
+                </select>
+            </div>
+            <input type="text" id="input2" name="input2" placeholder="Write a number">
+            <input type="submit" value="calculate">
+        </form>
+    </div>
+</body>
+</html>
